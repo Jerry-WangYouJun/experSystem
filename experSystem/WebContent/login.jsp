@@ -14,7 +14,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
       <title>登录页面</title>
-	
+      <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -47,7 +51,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</script>
   </head>
   
-  <body bgcolor="#11A5D5">
+  <body >
+  <div class="container_12">
   <div style="background-image: url('./images/login.jpg'); background-repeat:no-repeat; background-position:center; width: 100%;height: 99%">
     <form action="${pageContext.request.contextPath}/user/checkUser" method="post">
     		<table align="center" class="login" cellspacing="1px" cellpadding="1px"  >
@@ -74,6 +79,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</table>
     	</form> 
     </div>
-    	
+    	</div>
   </body>
 </html>

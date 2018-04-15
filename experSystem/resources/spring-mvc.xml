@@ -38,10 +38,7 @@
             </bean>  
         </mvc:message-converters>  
     </mvc:annotation-driven>
-	<mvc:resources location="/" mapping="/*.html"/>
-	<mvc:resources location="/css/" mapping="/css/**"/>
-	<mvc:resources location="/images/" mapping="/images/**"/>
-	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:default-servlet-handler />
 	
 	<!-- 自定义参数绑定 -->
 	<!-- <bean id="conversionService"
