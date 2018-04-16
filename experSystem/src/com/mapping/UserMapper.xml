@@ -18,14 +18,14 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from user
+    from t_user
     where ID = #{id,jdbcType=INTEGER}
   </select>
   
   <select id="selectByUserNoAndPwd" resultMap="BaseResultMap" parameterType="com.pojo.User" >
     select 
     <include refid="Base_Column_List" />
-    from user
+    from t_user
     where userNo = #{userno}
     and pwd = #{pwd}
   </select>
@@ -33,7 +33,7 @@
   <select id="selectUserByWhere" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
     select 
     <include refid="Base_Column_List" />
-    from user
+    from 
     where 1=1
        <if test="userno != null and userno != ''" >
         and userNo like #{userno}
@@ -50,7 +50,7 @@
     <select id="selectUserCountByWhere" resultType="java.lang.Long" parameterType="java.util.HashMap" >
     select 
     	count(*) 
-    from user
+    from 
     where 1=1
        <if test="userno != null and userno != ''" >
         and userNo like #{userno}
@@ -65,11 +65,11 @@
   
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from user
+    delete from 
     where ID = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.pojo.User" >
-    insert into user (ID,  email, 
+    insert into  (ID,  email, 
       position, pwd, 
       remark, sex, telphone, 
       userName, userNo)
@@ -80,7 +80,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="com.pojo.User" >
-    insert into user
+    insert into 
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         ID,
@@ -141,7 +141,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.pojo.User" >
-    update user
+    update 
     <set >
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
@@ -171,7 +171,7 @@
     where ID = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pojo.User" >
-    update user
+    update 
     set 
       email = #{email,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},
