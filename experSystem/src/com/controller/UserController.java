@@ -42,7 +42,7 @@ public class UserController {
 			
 		}else{
 			request.getSession().setAttribute("userName", user.getUsername());
-			rd = request.getRequestDispatcher("/index.jsp");
+			rd = request.getRequestDispatcher("/jsp/index.jsp");
 		}
 		try {
 			rd.forward(request, response);
